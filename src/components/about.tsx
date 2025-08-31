@@ -1,0 +1,26 @@
+"use client";
+import React from 'react';
+import { Panel, PanelContent, PanelHeader, PanelTitle } from './ui/panel';
+import { USER } from '@/data/user';
+import TextWithLinks from './ui/TextWithLinks';
+
+const About = () => {
+
+    return (
+        <Panel id="about">
+            <PanelHeader>
+                <PanelTitle>About</PanelTitle>
+            </PanelHeader>
+
+            <PanelContent className='font-mono space-y-4'>
+
+                {USER.about.map(sentence => (
+                    <TextWithLinks key={sentence} text={sentence}/>
+                ))}
+
+            </PanelContent>
+        </Panel>
+    );
+};
+
+export default About;

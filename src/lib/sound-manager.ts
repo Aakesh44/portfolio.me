@@ -1,0 +1,36 @@
+import say_my_name from '@/assets/audio/say_my_name.mp3'
+
+class SoundManager {
+  private audioCache: Map<string, HTMLAudioElement> = new Map();
+
+  playAudio(url: string) {
+    if (typeof window === "undefined") return;
+
+    let audio = this.audioCache.get(url);
+
+    if (!audio) {
+      audio = new Audio(url);
+      audio.preload = "auto";
+      this.audioCache.set(url, audio);
+    }
+
+    audio.currentTime = 0;
+    audio.play().catch((err) => {
+      console.warn(`Audio play failed for ${url}:`, err);
+    });
+  }
+
+  sayMyName(){
+    this.playAudio('/audio/say_my_name.mp3')
+  }
+
+  playClick() {
+    this.playAudio(
+      "https://assets.chanhdai.com/audio/ui-sounds/click.wav" // Source: iOS UI Sounds
+    );
+  }
+}
+
+const soundManager = new SoundManager();
+
+export default soundManager;
