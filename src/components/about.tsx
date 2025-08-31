@@ -3,6 +3,7 @@ import React from 'react';
 import { Panel, PanelContent, PanelHeader, PanelTitle } from './ui/panel';
 import { USER } from '@/data/user';
 import TextWithLinks from './ui/TextWithLinks';
+import Spotify from './profile/spotify';
 
 const About = () => {
 
@@ -18,6 +19,7 @@ const About = () => {
                     <TextWithLinks key={sentence} text={sentence}/>
                 ))}
 
+                <Spotify/>
             </PanelContent>
         </Panel>
     );

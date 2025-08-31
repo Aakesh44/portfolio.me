@@ -250,6 +250,8 @@
   --selection-foreground: oklch(0.141 0.005 285.823);
 
   --shadow-popover: 0 0 24px rgba(0, 0, 0, 0.5);
+
+  --animate-spin: spin 1.8s linear infinite;
 }
 
 @layer base {

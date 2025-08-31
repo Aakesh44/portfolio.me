@@ -17,7 +17,7 @@ export const USER = {
     phoneNumber: "+91 9600234831",
     email: "aakeshviswanathan@gmai.com",
     github: "https://github.com/Aakesh44",
-    website: "https://aakesh.in",
+    website: "https://aakesh.vercel.app",
     about: [
         "Hello, World!, Im a Aakesh — a Frontend Developer with a year of experience, passionate about building modern, user-friendly web applications.", 
         "I work with Next.js, React, TypeScript, and other frontend technologies, focusing on creating clean, scalable code and pixel-perfect designs.",

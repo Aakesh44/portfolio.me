@@ -66,7 +66,7 @@ const ProfileHeader = () => {
                     </div>
                 </div>
 
-                <div className='h-12 border-t border-edge pl-4 py-1 sm:h-auto overflow-hidden'>
+                <div className='h-12 flex items-center border-t border-edge pl-4 py-1 sm:h-auto overflow-hidden'>
                     <FlipSentences/>
                 </div>
             </aside>
