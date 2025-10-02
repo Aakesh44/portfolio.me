@@ -25,7 +25,8 @@ const Nav = ({
 }) => {
     return (
         <nav className={cn('flex items-center gap-6', className)}>
-            {items.map(({title, href}) => {
+
+            {items.map(({title, href, openInNewTab}) => {
 
                 const isActive = activePathname === href || (href !== '/' && activePathname?.startsWith(href));
 
@@ -34,6 +35,7 @@ const Nav = ({
                         key={href}
                         href={href}
                         active={isActive}
+                        openInNewTab={openInNewTab}
                     >
                         {title}
                     </NavItem>
@@ -44,17 +46,38 @@ const Nav = ({
 };
 
 export function NavItem({
+  href,
   active,
+  openInNewTab,
   ...props
 }: React.ComponentProps<typeof Link> & {
+  href: string;
   active?: boolean;
+  openInNewTab?: boolean
 }) {
+
+  const isExtenal = openInNewTab || href.startsWith('http');
+
+  const classes = cn(
+    "font-mono text-sm font-medium text-muted-foreground transition-all duration-300",
+    active && "text-foreground"
+  );
+
+  if(isExtenal) {
+    return (
+      <a
+        href={href}
+        target='_blank'
+        rel='noopener noreferrer'
+        className={classes}
+        {...props}
+      />
+    );
+  }
   return (
     <Link
-      className={cn(
-        "font-mono text-sm font-medium text-muted-foreground transition-all duration-300",
-        active && "text-foreground"
-      )}
+      href={href}
+      className={classes}
       {...props}
     />
   );

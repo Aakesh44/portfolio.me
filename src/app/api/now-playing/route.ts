@@ -25,6 +25,8 @@ export async function GET() {
   const album = song.item.album.name;
   const albumImageUrl = song.item.album.images[0].url;
   const songUrl = song.item.external_urls.spotify;
+  const progress_ms = song.progress_ms ?? 0;
+  const duration_ms = song.item.duration_ms ?? 0;
 
   return NextResponse.json({
     album,
@@ -33,5 +35,11 @@ export async function GET() {
     isPlaying,
     songUrl,
     title,
+    progress_ms,
+    duration_ms
+  },{
+    headers: {
+      "Cache-Control": "no-store",
+    }
   });
 }

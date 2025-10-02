@@ -6,17 +6,11 @@ import { cn } from '@/lib/utils';
 import {CodeXmlIcon, LucideProps, Search} from 'lucide-react';
 import {
   BriefcaseBusinessIcon,
-  CircleUserIcon,
   CornerDownLeftIcon,
-  DownloadIcon,
   LetterTextIcon,
   MoonStarIcon,
-  RssIcon,
   SunIcon,
-  TextIcon,
-  TriangleDashedIcon,
-  TypeIcon,
-  UserIcon,
+  FileText
 } from "lucide-react";
 import { Icons } from '../icons';
 import { SOCIAL_LINKS } from '@/data/social-links';
@@ -43,11 +37,12 @@ const MENU_LINKS: CommandLinkItem[] = [
     href: "/",
     icon: CodeXmlIcon,
   },
-  // {
-  //   title: "Projects",
-  //   href: "/projects",
-  //   icon: Icons.react,
-  // },
+  {
+    title: "Resume",
+    href: "https://drive.google.com/file/d/1blgk-9Dxtpi_Sc_oLxv69ql52sIGo5I7/view?usp=sharing",
+    icon: FileText,
+    openInNewTab: true
+  }
 ];
 
 const PORTFOLIO_LINKS: CommandLinkItem[] = [
@@ -84,7 +79,7 @@ const CommandMenu = () => {
 
     const router = useRouter();
 
-    const { resolvedTheme, setTheme} = useTheme();
+    const { setTheme} = useTheme();
 
     const [open, setOpen] = useState(false);
 

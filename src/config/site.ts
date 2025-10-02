@@ -1,4 +1,4 @@
-export const MAIN_NAV: { title: string; href: string }[] = [
+export const MAIN_NAV: { title: string; href: string, openInNewTab?: boolean }[] = [
     {
         title: 'Portfolio',
         href: '/'
@@ -8,8 +8,9 @@ export const MAIN_NAV: { title: string; href: string }[] = [
         href: '/#about'
     },
     {
-        title: 'Projects',
-        href: '/#projects'
+        title: 'Resume',
+        href: 'https://drive.google.com/file/d/1blgk-9Dxtpi_Sc_oLxv69ql52sIGo5I7/view?usp=sharing',
+        openInNewTab: true
     }
 ];
 

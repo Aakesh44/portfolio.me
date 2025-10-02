@@ -8,7 +8,7 @@ import Spotify from './profile/spotify';
 const About = () => {
 
     return (
-        <Panel id="about">
+        <Panel id="about" className=''>
             <PanelHeader>
                 <PanelTitle>About</PanelTitle>
             </PanelHeader>

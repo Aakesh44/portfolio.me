@@ -15,7 +15,7 @@ export const USER = {
     ],
     address: "Bangalore, India",
     phoneNumber: "+91 9600234831",
-    email: "aakeshviswanathan@gmai.com",
+    email: "aakeshviswanathan@gmail.com",
     github: "https://github.com/Aakesh44",
     website: "https://aakesh.vercel.app",
     about: [
