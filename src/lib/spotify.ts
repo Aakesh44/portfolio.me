@@ -11,6 +11,8 @@ const basic = Buffer.from(`${client_id}:${client_secret}`).toString("base64");
 
 const getAccessToken = async (): Promise<string> => {
 
+  console.log("refresh_token", refresh_token);
+
   const response = await fetch(TOKEN_ENDPOINT, {
     method: "POST",
     headers: {
@@ -25,12 +27,15 @@ const getAccessToken = async (): Promise<string> => {
 
   const data = await response.json();
   console.log("data", data);
+  
   return data.access_token;
 };
 
 export const getNowPlaying = async () => {
 
     const access_token = await getAccessToken();
+
+    console.log("access_token", access_token);
 
     return fetch(NOW_PLAYING_ENDPOINT, {
       headers: {
