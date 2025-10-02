@@ -5,8 +5,6 @@ import { TECH_STACK } from '@/data/tech-stack';
 import { SimpleTooltip } from './ui/tooltip';
 import Image from 'next/image';
 
-import type { SVGProps } from "react";
-
 const Techstack = () => {
     return (
         <Panel id="techstack">

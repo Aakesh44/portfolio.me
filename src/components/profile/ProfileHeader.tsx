@@ -2,12 +2,11 @@ import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import React from 'react';
 import { VerifiedIcon } from '../icons';
-import { SimpleTooltip, Tooltip } from '../ui/tooltip';
+import { SimpleTooltip } from '../ui/tooltip';
 import SayMyName from './say-my-name';
 import FlipSentences from './flip-sentenses';
 import { USER } from '@/data/user';
 import india from "@/assets/images/indian-flag.jpg";
-import me from "@/assets/images/aakesh.jpg"
 
 const ProfileHeader = () => {
     return (
@@ -15,12 +14,23 @@ const ProfileHeader = () => {
             
             <aside className='relative shrink-0 border-r border-edge'>
                 <div className='relative mx-[2px] my-[4px]'>
+                    <div className='hidden. relative size-32 object-fill rounded-full ring-1 ring-border ring-offset-2 ring-offset-background select-none sm:size-40 overflow-hidden'>
+                        <Image
+                            className='size-full object-cover'
+                            src={'/images/aakesh.jpg'}
+                            alt="avatar"
+                            fill
+                            quality={100}
+                        />
+                    </div>
                     <Image
-                        className='size-32 object-fill rounded-full ring-1 ring-border ring-offset-2 ring-offset-background select-none sm:size-40'
-                        src={'/assets/images/aakesh.jpg'}
+                        className='hidden size-32 object-fill rounded-full ring-1 ring-border ring-offset-2 ring-offset-background select-none sm:size-40'
+                        src={'/images/aakesh.jpg'}
                         alt="avatar"
                         width={40}
                         height={40}
+                        quality={100}
+                        unoptimized
                     />
                 </div>
                 <div className='absolute top-0 left-0 h-10 aspect-3/2 bg-lime-400 hidden'>

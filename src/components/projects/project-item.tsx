@@ -7,7 +7,7 @@ import { SimpleTooltip } from '../ui/tooltip';
 import Tag from '../ui/tag';
 import TextWithLinks from '../ui/TextWithLinks';
 
-const ProjectItem = ({project, className} : {className?: string, project: Project}) => {
+const ProjectItem = ({project} : {className?: string, project: Project}) => {
 
     const {start, end} = project.period;
     const isOngoing = !end;

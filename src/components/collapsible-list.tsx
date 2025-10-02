@@ -10,14 +10,14 @@ type Props<T> = {
     keyExtractor?: (item: T) => string;
     renderItem: (item: T) => React.ReactNode;
 }
-const CollapsibleList = <T,>({ items, max = 3, keyExtractor, renderItem }: Props<T>) => {
+const CollapsibleList = <T,>({ items, max = 3, renderItem }: Props<T>) => {
     return (
         <Collapsible>
 
-            {items.slice(0, max).map((item, i) => renderItem(item))}
+            {items.slice(0, max).map((item) => renderItem(item))}
 
             <CollapsibleContent>
-                {items.slice(max).map((item, i) => renderItem(item))}
+                {items.slice(max).map((item) => renderItem(item))}
             </CollapsibleContent>
 
             {items.length > max && (

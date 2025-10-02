@@ -1,4 +1,3 @@
-import say_my_name from '@/assets/audio/say_my_name.mp3'
 
 class SoundManager {
   private audioCache: Map<string, HTMLAudioElement> = new Map();

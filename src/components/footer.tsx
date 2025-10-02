@@ -1,6 +1,4 @@
 import React from 'react';
-import { Panel } from './ui/panel';
-import { div } from 'motion/react-client';
 import { cn } from '@/lib/utils';
 
 const Footer = () => {

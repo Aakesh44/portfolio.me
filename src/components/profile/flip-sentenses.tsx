@@ -2,7 +2,7 @@
 
 import { USER } from '@/data/user';
 import { AnimatePresence, motion } from 'motion/react';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 
 const FlipSentences = () => {
 
@@ -12,11 +12,11 @@ const FlipSentences = () => {
 
     const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
-    const startAnimation = () => {
+    const startAnimation = useCallback(() => {
         intervalRef.current = setInterval(() => {
             setCurrentSentence(prev => (prev + 1) % sentences.length);
         }, 2500)
-    };
+    },[ sentences ]);
 
     useEffect(() => {
         startAnimation();
@@ -44,7 +44,7 @@ const FlipSentences = () => {
             abortController.abort();
         }
 
-    }, [sentences]);
+    }, [sentences, startAnimation]);
 
     return (
         <AnimatePresence mode='wait' initial={false}>
