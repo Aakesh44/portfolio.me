@@ -83,10 +83,10 @@ const Spotify = () => {
                     </>
                 ):
                 isLoading ? (
-                    <p>Cheacking Spotify For What I'm listening to</p>
+                    <p>Cheacking Spotify For What I&#39;m listening to</p>
                 ):
                 (
-                    <p>I'm not listening to anything right now</p>
+                    <p>I&#39;m not listening to anything right now</p>
                 )}
 
             </div>
