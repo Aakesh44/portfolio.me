@@ -16,11 +16,11 @@ const Overview = () => {
 
                 <OverviewItem content={USER.address} icon={MapPinIcon}/>
 
-                <OverviewItem content={USER.phoneNumber} href={`tel:${USER.phoneNumber}`} icon={PhoneIcon}/>
+                {/* <OverviewItem content={USER.phoneNumber} href={`tel:${USER.phoneNumber}`} icon={PhoneIcon}/>
 
                 <OverviewItem content={USER.email} href={`mailto:${USER.email}`} icon={MailIcon}/>
 
-                <OverviewItem content={USER.website} href={USER.website} icon={GlobeIcon}/>
+                <OverviewItem content={USER.website} href={USER.website} icon={GlobeIcon}/> */}
 
             </PanelContent>
         </Panel>

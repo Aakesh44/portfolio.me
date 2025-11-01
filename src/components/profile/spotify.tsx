@@ -14,7 +14,7 @@ type Song = {
     duration_ms: number;
 };
 
-const fetcher = (url: string) => fetch(url).then((res) => { console.log('res :', res); return res.json()});
+const fetcher = (url: string) => fetch(url).then((res) => {return res.json()});
 
 const Spotify = () => {
 
@@ -32,19 +32,17 @@ const Spotify = () => {
 
                 if(!latestData.isPlaying) return 30_000;
 
-                console.log('duration:', latestData.duration_ms, 'progress:', latestData.progress_ms);
+                // console.log('duration:', latestData.duration_ms, 'progress:', latestData.progress_ms);
                 const remaining = Math.max(
                     (latestData.duration_ms ?? 0) - (latestData.progress_ms ?? 0),
                     0
                 );
 
-                console.log("remaining", remaining + 750, 10 * 60 * 1000);
+                // console.log("remaining", remaining + 750, 10 * 60 * 1000);
                 return Math.min(remaining + 750, 10 * 60 * 1000);
             },
         }
     );
-
-    console.log(data);
 
     return (
         <>

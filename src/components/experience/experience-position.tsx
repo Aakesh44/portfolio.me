@@ -88,7 +88,7 @@ const ExperiencePosition = (position: ExperiencePositionType) => {
 
                             <li className='group/desc w-full text-sm flex items-start justify-start gap-3'>
 
-                                <span 
+                                <div 
                                     className={cn(
                                         "block shrink-0 size-1.5 mt-2 rounded-full bg-zinc-300 dark:bg-zinc-600",
                                         isOngoing ? "group-hover/desc:bg-green-500/60 dark:group-hover/desc:bg-green-500" : "group-hover/desc:bg-zinc-500/40 dark:group-hover/desc:bg-zinc-500"

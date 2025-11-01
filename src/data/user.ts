@@ -11,7 +11,7 @@ export const USER = {
         {
             title: "Frontend Developer",
             company: "Thinsil Technologies",
-            website: "https://thinsil.com",
+            website: "#",
         }
     ],
     address: "Bangalore, India",
