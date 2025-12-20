@@ -11,7 +11,7 @@ import india from "@/assets/images/indian-flag.jpg";
 const ProfileHeader = () => {
     return (
         <section className='screen-line-after flex border-x border-edge'>
-            
+
             <aside className='relative shrink-0 border-r border-edge'>
                 <div className='relative mx-[2px] my-[4px]'>
                     <div className='hidden. relative size-32 object-fill rounded-full ring-1 ring-border ring-offset-2 ring-offset-background select-none sm:size-40 overflow-hidden'>
@@ -25,7 +25,7 @@ const ProfileHeader = () => {
                     </div>
                     <Image
                         className='hidden size-32 object-fill rounded-full ring-1 ring-border ring-offset-2 ring-offset-background select-none sm:size-40'
-                        src={'/images/aakesh.jpg'}
+                        src={'/images/aakesh2.png'}
                         alt="avatar"
                         width={40}
                         height={40}
@@ -41,7 +41,7 @@ const ProfileHeader = () => {
                             alt="indian flag"
                             fill
                             quality={100}
-                            
+
                         />
                     </div>
                 </div>
@@ -70,14 +70,14 @@ const ProfileHeader = () => {
                         <SimpleTooltip content="Verified">
                             <VerifiedIcon className="size-[0.6em] mt-px translate-y-px text-info select-none" />
                         </SimpleTooltip>
-                        
-                        <SayMyName/>
+
+                        <SayMyName />
 
                     </div>
                 </div>
 
                 <div className='h-12 flex items-center border-t border-edge pl-4 py-1 sm:h-auto overflow-hidden'>
-                    <FlipSentences/>
+                    <FlipSentences />
                 </div>
             </aside>
         </section>
