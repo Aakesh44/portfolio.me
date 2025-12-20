@@ -17,7 +17,7 @@ const ProfileHeader = () => {
                     <div className='hidden. relative size-32 object-fill rounded-full ring-1 ring-border ring-offset-2 ring-offset-background select-none sm:size-40 overflow-hidden'>
                         <Image
                             className='size-full object-cover'
-                            src={'/images/aakesh.jpg'}
+                            src={'/images/aakesh2.png'}
                             alt="avatar"
                             fill
                             quality={100}
