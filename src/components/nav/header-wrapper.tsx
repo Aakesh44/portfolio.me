@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 
 const HeaderWrapper = (props: React.ComponentProps<'header'>) => {
 
-    const {scrollY} = useScroll();
+    const { scrollY } = useScroll();
 
     const [affix, setaffix] = useState(false);
 
@@ -14,7 +14,7 @@ const HeaderWrapper = (props: React.ComponentProps<'header'>) => {
     });
 
     return (
-        <header data-affix={affix} {...props}/>
+        <header data-affix={affix} {...props} />
     );
 };
 

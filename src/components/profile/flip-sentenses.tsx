@@ -16,29 +16,29 @@ const FlipSentences = () => {
         intervalRef.current = setInterval(() => {
             setCurrentSentence(prev => (prev + 1) % sentences.length);
         }, 2500)
-    },[ sentences ]);
+    }, [sentences]);
 
     useEffect(() => {
         startAnimation();
 
         const abortController = new AbortController();
-        const {signal} = abortController;
+        const { signal } = abortController;
 
         document.addEventListener(
             "visibilitychange",
             () => {
-                if(document.visibilityState === "visible") {
-                    setCurrentSentence(prev=> (prev+1) % sentences.length);
+                if (document.visibilityState === "visible") {
+                    setCurrentSentence(prev => (prev + 1) % sentences.length);
                     startAnimation();
-                } else if(intervalRef.current) {
+                } else if (intervalRef.current) {
                     clearInterval(intervalRef.current);
                     intervalRef.current = null;
                 }
-            }, {signal}
+            }, { signal }
         );
 
         return () => {
-            if(intervalRef.current){
+            if (intervalRef.current) {
                 clearInterval(intervalRef.current);
             }
             abortController.abort();
@@ -48,7 +48,7 @@ const FlipSentences = () => {
 
     return (
         <AnimatePresence mode='wait' initial={false}>
-            
+
             <motion.p
                 key={`current-sentence-${currentSentence}`}
                 className='font-mono text-sm text-balance text-muted-foreground select-none'
@@ -69,7 +69,7 @@ const FlipSentences = () => {
                     ease: "linear"
                 }}
             >
-                {sentences[currentSentence]} 
+                {sentences[currentSentence]}
             </motion.p>
         </AnimatePresence>
     );

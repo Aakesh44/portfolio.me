@@ -24,18 +24,18 @@ const Header = () => {
             >
                 <Link href={'/'} className='w-20 h-full grid place-items-center font-semibold font-mono text-foreground'>AAKESH</Link>
 
-                <div className='h-full grow border-x border-edge sm:-ml-2'/>
+                <div className='h-full grow border-x border-edge sm:-ml-2' />
 
-                <DesktopMenu/> 
+                <DesktopMenu />
 
                 <div className='flex items-center gap-2'>
-                    <CommandMenu/>
-                    <NavGithub/>
-                    <ToggleTheme/>
-                    <MobileMenu/>
+                    <CommandMenu />
+                    <NavGithub />
+                    <ToggleTheme />
+                    <MobileMenu />
                 </div>
             </div>
-            
+
         </HeaderWrapper>
     );
 };

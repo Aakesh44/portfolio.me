@@ -9,7 +9,7 @@ export const MAIN_NAV: { title: string; href: string, openInNewTab?: boolean }[]
     },
     {
         title: 'Resume',
-        href: 'https://drive.google.com/file/d/1blgk-9Dxtpi_Sc_oLxv69ql52sIGo5I7/view?usp=sharing',
+        href: 'https://drive.google.com/file/d/1wCeR-VWyfcX6rxReRy5LKp8-rKW2flzc/view?usp=drive_link',
         openInNewTab: true
     }
 ];

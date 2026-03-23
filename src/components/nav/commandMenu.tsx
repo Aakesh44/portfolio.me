@@ -3,7 +3,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Button } from '../ui/button';
 import { cn } from '@/lib/utils';
-import {CodeXmlIcon, LucideProps, Search} from 'lucide-react';
+import { CodeXmlIcon, LucideProps, Search } from 'lucide-react';
 import {
   BriefcaseBusinessIcon,
   CornerDownLeftIcon,
@@ -65,7 +65,7 @@ const PORTFOLIO_LINKS: CommandLinkItem[] = [
     title: "Projects",
     href: "/#projects",
     icon: Icons.project,
-  } 
+  }
 ];
 
 const SOCIAL_LINK_ITEMS: CommandLinkItem[] = SOCIAL_LINKS.map((item) => ({
@@ -77,156 +77,156 @@ const SOCIAL_LINK_ITEMS: CommandLinkItem[] = SOCIAL_LINKS.map((item) => ({
 
 const CommandMenu = () => {
 
-    const router = useRouter();
+  const router = useRouter();
 
-    const { setTheme} = useTheme();
+  const { setTheme } = useTheme();
 
-    const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
-    useEffect(() => {
-      const abortController = new AbortController();
-      const { signal } = abortController;
+  useEffect(() => {
+    const abortController = new AbortController();
+    const { signal } = abortController;
 
-      document.addEventListener(
-        "keydown",
-        (e: KeyboardEvent) => {
-          if ((e.key === "k" && (e.metaKey || e.ctrlKey)) || e.key === "/") {
-            if (
-              (e.target instanceof HTMLElement && e.target.isContentEditable) ||
-              e.target instanceof HTMLInputElement ||
-              e.target instanceof HTMLTextAreaElement ||
-              e.target instanceof HTMLSelectElement
-            ) {
-              return;
-            }
-
-            e.preventDefault();
-            setOpen((open) => !open);
+    document.addEventListener(
+      "keydown",
+      (e: KeyboardEvent) => {
+        if ((e.key === "k" && (e.metaKey || e.ctrlKey)) || e.key === "/") {
+          if (
+            (e.target instanceof HTMLElement && e.target.isContentEditable) ||
+            e.target instanceof HTMLInputElement ||
+            e.target instanceof HTMLTextAreaElement ||
+            e.target instanceof HTMLSelectElement
+          ) {
+            return;
           }
-        },
-        { signal }
-      );
 
-      return () => abortController.abort();
-    }, []);
-
-    const handleOpenLink = useCallback(
-      (href: string, openInNewTab = false) => {
-        setOpen(false);
-
-        if (openInNewTab) {
-          window.open(href, "_blank", "noopener");
-        } else {
-          router.push(href);
+          e.preventDefault();
+          setOpen((open) => !open);
         }
       },
-      [router]
-    );
-    const handleThemeChange = useCallback(
-      (theme: "light" | "dark" | "system") => {
-        setOpen(false);
-        setTheme(theme);
-      },
-      [setTheme]
+      { signal }
     );
 
+    return () => abortController.abort();
+  }, []);
 
-    return (
-        <>
-            <Button
-                variant="secondary"
-                className={cn(
-                "h-8 gap-1.5 rounded-full bg-zinc-50 px-2.5 text-muted-foreground select-none hover:bg-zinc-50 dark:bg-zinc-900 dark:hover:bg-zinc-900",
-                "not-dark:border dark:inset-shadow-[1px_1px_1px,0px_0px_2px] dark:inset-shadow-white/15"
-                )}
-                onClick={() => setOpen(true)}
+  const handleOpenLink = useCallback(
+    (href: string, openInNewTab = false) => {
+      setOpen(false);
+
+      if (openInNewTab) {
+        window.open(href, "_blank", "noopener");
+      } else {
+        router.push(href);
+      }
+    },
+    [router]
+  );
+  const handleThemeChange = useCallback(
+    (theme: "light" | "dark" | "system") => {
+      setOpen(false);
+      setTheme(theme);
+    },
+    [setTheme]
+  );
+
+
+  return (
+    <>
+      <Button
+        variant="secondary"
+        className={cn(
+          "h-8 gap-1.5 rounded-full bg-zinc-50 px-2.5 text-muted-foreground select-none hover:bg-zinc-50 dark:bg-zinc-900 dark:hover:bg-zinc-900",
+          "not-dark:border dark:inset-shadow-[1px_1px_1px,0px_0px_2px] dark:inset-shadow-white/15"
+        )}
+        onClick={() => setOpen(true)}
+      >
+        <Search />
+
+        <span className="font-sans text-sm/4 font-medium sm:hidden">
+          Search
+        </span>
+
+        <CommandMenuKbd className="hidden tracking-wider sm:in-[.os-macos_&]:flex">
+          ⌘K
+        </CommandMenuKbd>
+        <CommandMenuKbd className="hidden sm:not-[.os-macos_&]:flex">
+          Ctrl K
+        </CommandMenuKbd>
+      </Button>
+
+      <CommandDialog open={open} onOpenChange={setOpen}>
+
+        <CommandInput placeholder='Type a command or search...' />
+
+        <CommandList className='min-h-80'>
+
+          <CommandEmpty>No results found</CommandEmpty>
+
+          <CommandLinkGroup
+            heading='Menu'
+            links={MENU_LINKS}
+            onLinkSelect={handleOpenLink}
+          />
+
+          <CommandSeparator />
+
+          <CommandLinkGroup
+            heading='Portfolio'
+            links={PORTFOLIO_LINKS}
+            onLinkSelect={handleOpenLink}
+          />
+
+          <CommandSeparator />
+
+          <CommandLinkGroup
+            heading='Social Links'
+            links={SOCIAL_LINK_ITEMS}
+            onLinkSelect={handleOpenLink}
+          />
+
+          <CommandSeparator />
+
+          <CommandGroup heading='Theme'>
+            <CommandItem
+              keywords={["theme"]}
+              onSelect={() => {
+                soundManager.playClick();
+                handleThemeChange("light")
+              }}
             >
-                <Search/>
+              <SunIcon />
+              Light
+            </CommandItem>
+            <CommandItem
+              keywords={["theme"]}
+              onSelect={() => {
+                soundManager.playClick();
+                handleThemeChange("dark")
+              }}
+            >
+              <MoonStarIcon />
+              Dark
+            </CommandItem>
+            <CommandItem
+              keywords={["theme"]}
+              onSelect={() => {
+                soundManager.playClick();
+                handleThemeChange("system")
+              }}
+            >
+              <Icons.contrast />
+              System
+            </CommandItem>
 
-                <span className="font-sans text-sm/4 font-medium sm:hidden">
-                Search
-                </span>
+          </CommandGroup>
 
-                <CommandMenuKbd className="hidden tracking-wider sm:in-[.os-macos_&]:flex">
-                ⌘K
-                </CommandMenuKbd>
-                <CommandMenuKbd className="hidden sm:not-[.os-macos_&]:flex">
-                Ctrl K
-                </CommandMenuKbd>
-            </Button>
+        </CommandList>
 
-            <CommandDialog open={open} onOpenChange={setOpen}>
-                
-                <CommandInput placeholder='Type a command or search...'/>
-
-                <CommandList className='min-h-80'>
-
-                  <CommandEmpty>No results found</CommandEmpty>
-
-                  <CommandLinkGroup
-                    heading='Menu'
-                    links={MENU_LINKS}
-                    onLinkSelect={handleOpenLink}
-                  />
-
-                  <CommandSeparator/>
-
-                  <CommandLinkGroup
-                    heading='Portfolio'
-                    links={PORTFOLIO_LINKS}
-                    onLinkSelect={handleOpenLink}
-                  />
-
-                  <CommandSeparator/>
-
-                  <CommandLinkGroup
-                    heading='Social Links'
-                    links={SOCIAL_LINK_ITEMS}
-                    onLinkSelect={handleOpenLink}
-                  />
-
-                  <CommandSeparator/>
-
-                  <CommandGroup heading='Theme'>
-                    <CommandItem
-                      keywords={["theme"]}
-                      onSelect={() => {
-                        soundManager.playClick();
-                        handleThemeChange("light")
-                      }}
-                    >
-                      <SunIcon/>
-                      Light
-                    </CommandItem>
-                    <CommandItem
-                      keywords={["theme"]}
-                      onSelect={() => {
-                        soundManager.playClick();
-                        handleThemeChange("dark")
-                      }}
-                    >
-                      <MoonStarIcon/>
-                      Dark
-                    </CommandItem>
-                    <CommandItem
-                      keywords={["theme"]}
-                      onSelect={() => {
-                        soundManager.playClick();
-                        handleThemeChange("system")
-                      }}
-                    >
-                      <Icons.contrast/>
-                      System
-                    </CommandItem>
-
-                  </CommandGroup>
-
-                </CommandList>
-
-                <CommandMenuFooter/>
-            </CommandDialog>
-        </>
-    );
+        <CommandMenuFooter />
+      </CommandDialog>
+    </>
+  );
 };
 
 export default CommandMenu;
