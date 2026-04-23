@@ -9,9 +9,9 @@ export const USER = {
     ],
     jobs: [
         {
-            title: "Frontend Developer",
-            company: "Thinsil Technologies",
-            website: "#",
+            title: "Founding Engineer",
+            company: "TechBench.ai",
+            website: "https://techbench.co.in/",
         }
     ],
     address: "Bangalore, India",
@@ -20,7 +20,7 @@ export const USER = {
     github: "https://github.com/Aakesh44",
     website: "https://aakesh.vercel.app",
     about: [
-        "Hello, World!, Im a Aakesh — a Frontend Developer with a year of experience, passionate about building modern, user-friendly web applications.", 
+        "Hello, World!, Im a Aakesh — a Frontend Developer with 2 year of experience, passionate about building modern, user-friendly web applications.",
         "I work with Next.js, React, TypeScript, and other frontend technologies, focusing on creating clean, scalable code and pixel-perfect designs.",
         "I enjoy crafting layouts and designing intuitive interfaces, while continuously learning advanced frontend techniques, best practices, and architectural patterns to improve both performance and user experience."
     ]

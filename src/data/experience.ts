@@ -16,18 +16,25 @@ export const EXPERIENCES: Experience[] = [
                     start: "Apr 2024",
                 },
                 employmentType: "Full-time",
-                description:[
-                    "Rebuilt the SaaS application using Next.js with TypeScript for scalability.",
-                    "Implemented SEO, SSR, and SSG to maximize Next.js features and performance.",
-                    "Developed a real-time chat functionality for seamless communication.",
-                    "Ensured pixel-perfect implementation, matching code precisely to design specifications.",
-                    "Collaborated with designers and backend engineers to deliver a high-quality, production-ready product."
+                description: [
+                    "Next.js & Design System: Led a full-stack rebuild using TypeScript and a custom shadcn/ui library, significantly improving performance, SEO, and accessibility scores.",
+
+                    "Performance Engineering: Optimized large-scale data rendering via Virtualization and Infinite Scroll, using ISR and SSG to ensure high-speed page loads and smooth UX.",
+
+                    "Secure Architecture: Engineered a centralized RBAC system using HOCs to manage permissions across 30+ protected routes for four distinct user roles.",
+
+                    "State & Real-Time Sync: Scaled data management using Zustand and React Query, integrating Socket.io with custom hooks for low-latency real-time communication.",
                 ],
-                icon:"code",
-                skills:[
+                icon: "code",
+                skills: [
                     "Next.js",
+                    "React.js",
                     "Tailwind CSS",
                     "TypeScript",
+                    "React Query",
+                    "Zustand",
+                    "Socket.io",
+                    "Shadcn UI",
                     "Git"
                 ],
                 isExpanded: true
@@ -40,15 +47,19 @@ export const EXPERIENCES: Experience[] = [
                     end: "Mar 2023"
                 },
                 employmentType: "Internship",
-                description:[
-                    "Built a SaaS application using React with a well-designed, functional UI.",
-                    "Integrated WebSocket to enable real-time notifications.",
-                    "Optimized the codebase for production performance and scalability.",
-                    "Delivered my first real-time project, gaining hands-on industry experience."
+                description: [
+                    "Secure Access: Engineered a centralized RBAC system with middleware-protected routing to manage permissions across four distinct user roles and 30+ routes.",
+
+                    "Real-Time Architecture: Scaled real-time communication by integrating Socket.io with custom hooks and Zustand, reducing latency for notifications and chat.",
+
+                    "Performance Optimization: Eliminated UI lag in high-density views by implementing Windowing and Virtualization for large data tables.",
+
+                    "API Resilience: Standardized data fetching and security by implementing Axios Interceptors for automated JWT refresh logic and global error handling.",
                 ],
-                icon:"code",
-                skills:[
+                icon: "code",
+                skills: [
                     "React.js",
+                    "React Router",
                     "Tailwind CSS",
                     "JavaScript",
                     "Git"
@@ -71,8 +82,9 @@ export const EXPERIENCES: Experience[] = [
                     end: "2023"
                 },
                 description: [
-                    "During my university years, I gained a strong foundation in computer science and software engineering, which exposed me to the core principles of programming, problem-solving, and modern technologies.", 
-                    " This experience sparked my passion for development and prepared me to step into the field as a software engineer, eager to keep learning and building."
+                    "Technical Foundation: Developed a deep understanding of core CS principles, transitioning from theoretical programming to building production-ready applications with modern frameworks.",
+
+                    "Engineering Growth: Gained hands-on exposure to the full software development lifecycle, evolving from academic problem-solving to leading technical implementations and team collaboration.",
                 ],
                 icon: "education",
                 skills: [

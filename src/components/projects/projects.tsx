@@ -16,7 +16,7 @@ const Projects = () => {
             <CollapsibleList
                 items={PROJECTS}
                 max={3}
-                renderItem={(item) => <ProjectItem key={item.id} project={item}/>}
+                renderItem={(item) => <ProjectItem key={item.id} project={item} />}
             />
         </Panel>
     );

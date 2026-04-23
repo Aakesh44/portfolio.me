@@ -26,7 +26,7 @@ const CollapsibleList = <T,>({ items, max = 3, renderItem }: Props<T>) => {
                         <Button
                             className="group/collapsible-trigger flex "
                             variant="default"
-                        >   
+                        >
                             <span className=" hidden group-data-[state=closed]/collapsible-trigger:block ">
                                 Show More
                             </span>
@@ -44,6 +44,7 @@ const CollapsibleList = <T,>({ items, max = 3, renderItem }: Props<T>) => {
                 </div>
             )}
         </Collapsible>
-)}
+    )
+}
 
 export default CollapsibleList;

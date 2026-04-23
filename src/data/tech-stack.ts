@@ -12,69 +12,111 @@ import motion from "@/assets/images/motion.png";
 import nodejs from "@/assets/images/nodejs.png";
 import express from "@/assets/images/express.png";
 import mongodb from "@/assets/images/mongodb.png";
-import git from "@/assets/images/git.png"
+import git from "@/assets/images/git.png";
+import github from "@/assets/images/github-light.png";
+import githubdark from "@/assets/images/github-dark.png";
+import reactQuery from "@/assets/images/react-query.png";
+import radix from "@/assets/images/radixui.png";
+import radixdark from "@/assets/images/radixui-dark.png";
+import zustand from "@/assets/images/zustand.png";
+import claude from "@/assets/images/claude.png";
+import cursor from "@/assets/images/cursor.png";
+import cursordark from "@/assets/images/cursor-dark.png";
 
 export const TECH_STACK: Techstack[] = [
     {
         name: "JavaScript",
         icon: javascript,
-        href:'#',
+        href: '#',
     },
     {
         name: "TypeScript",
         icon: typescript,
-        href:'#',
+        href: '#',
     },
     {
         name: "Tailwind CSS",
         icon: tailwind,
-        href:'#',
+        href: '#',
     },
     {
         name: "React",
         icon: react,
-        href:'#',
+        href: '#',
     },
     {
         name: "Next.js",
         icon: nextjs,
         darkIcon: nextjsdark,
-        href:'#',
+        href: '#',
     },
     {
         name: "Shadcn UI",
         icon: shadcn,
         darkIcon: shadcndark,
-        href:'#',
+        href: '#',
+    },
+    {
+        name: 'Radix UI',
+        icon: radix,
+        darkIcon: radixdark,
+        href: '#',
     },
     {
         name: "Framer Motion",
         icon: motion,
-        href:'#',
+        href: '#',
     },
     {
         name: "Redux",
         icon: redux,
-        href:'#',
+        href: '#',
+    },
+    {
+        name: "React Query",
+        icon: reactQuery,
+        href: '#',
+    },
+    {
+        name: "Zustand",
+        icon: zustand,
+        href: '#',
     },
     {
         name: "Node.js",
         icon: nodejs,
-        href:'#',
+        href: '#',
     },
     {
         name: "Express.js",
         icon: express,
-        href:'#',
+        href: '#',
     },
     {
         name: "MongoDB",
         icon: mongodb,
-        href:'#',
+        href: '#',
     },
     {
         name: "Git",
         icon: git,
-        href:'#',
-    }
+        href: '#',
+    },
+    {
+        name: "GitHub",
+        icon: github,
+        darkIcon: githubdark,
+        href: '#',
+    },
+    {
+        name: "Claude AI",
+        icon: claude,
+        href: '#',
+    },
+    {
+        name: "Cursor",
+        icon: cursor,
+        darkIcon: cursordark,
+        href: '#',
+    },
 ]
