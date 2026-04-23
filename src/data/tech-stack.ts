@@ -27,7 +27,7 @@ export const TECH_STACK: Techstack[] = [
     {
         name: "JavaScript",
         icon: javascript,
-        href: '#',
+        href: '#javascript',
     },
     {
         name: "TypeScript",
